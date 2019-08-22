@@ -1,0 +1,25 @@
+{
+  "name": "wordpress cloudrun",
+  "env": {
+      "DB_HOST": {
+          "description": "IP address of MySQL Database.",
+          "value": "localhost",
+          "required": true
+      },
+      "DB_USER": {
+          "description": "MySQL Database user name",
+          "value": "root",
+          "required": true
+      },
+      "DB_PASSWORD": {
+          "description": "MySQL Database user password",
+          "value": "password",
+          "required": true
+      },
+      "DB_NAME": {
+          "description": "The name of database"
+          "value": "wordpress",
+          "required": true
+      }
+  }
+}
