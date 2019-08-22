@@ -17,7 +17,11 @@ RUN set -ex; \
 	tar -xzf *.tar.gz -C /usr/src/; \
 	rm *.tar.gz; \
         chown -R www-data:www-data /usr/src/wordpress
-
+# downloand the Google Cloud Storage plugin for wordpress from wordpress.org	
+RUN curl -o wp-super-cache.zip -L "https://downloads.wordpress.org/plugin/gcs.0.1.4.zip" ; \
+    unzip gcs.zip -d /usr/src/wordpress/wp-content/plugins/; \
+    rm gcs.zip ;
+    
 #docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh; 
