@@ -16,9 +16,9 @@ The deployment will prompt for the following environment variables "DB_HOST","DB
  
  "DB_USER" is the MySQL database username (The default value is "root")
  
- "DB_PASSWORD" is the MySQL database userpassword (The default valu is "password")
+ "DB_PASSWORD" is the MySQL database userpassword (The default value is "password")
  
- "DB_NAME" is  name of the database for WordPress ( The default valu is "wordpress")
+ "DB_NAME" is  name of the database for WordPress ( The default value is "wordpress")
  
   
 
