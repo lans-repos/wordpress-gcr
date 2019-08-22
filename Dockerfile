@@ -15,7 +15,7 @@ RUN set -ex; \
 
 COPY  wordpress/wp-content/plugins/  /usr/src/wordpress/wp-content/plugins/
 
-COPY  wordpress/wp-config.php  /usr/src/wordpress/
+COPY  wp-config.php  /usr/src/wordpress/
 
 EXPOSE 8080
 
