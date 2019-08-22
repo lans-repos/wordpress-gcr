@@ -17,7 +17,7 @@
           "required": true
       },
       "DB_NAME": {
-          "description": "The name of database"
+          "description": "The name of database",
           "value": "wordpress",
           "required": true
       }
