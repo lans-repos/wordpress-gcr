@@ -16,16 +16,14 @@ RUN set -ex; \
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 	tar -xzf *.tar.gz -C /usr/src/; \
 	rm *.tar.gz; \
-	chmod +x docker-entrypoint.sh; \
-	chown -R www-data:www-data /usr/src/wordpress
-
-
-# wordpress conf
-COPY  wp-config.php  /usr/src/wordpress/
+        chown -R www-data:www-data /usr/src/wordpress
 
 #docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh; 
 
+# wordpress conf
+COPY  wp-config.php  /usr/src/wordpress/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
