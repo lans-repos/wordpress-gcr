@@ -6,7 +6,8 @@ Launch WordPress on Google Cloud Run. The wordpress image has the Google Cloud S
 
 ## Requirements
 A  MYSQL database (e.g called named wordpress) that can be accessed remotely via external IP address.
- Note: This was tested with MYSQ database created using [GCP MYSQL deployment](https://console.cloud.google.com/marketplace/partners/click-to-deploy-images?project=pemm-220514)
+
+FYI: This was tested with a MYSQL database created using [GCP MYSQL deployment](https://console.cloud.google.com/marketplace/partners/click-to-deploy-images?project=pemm-220514)
 
 ## Deployment Parameters
 The deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
