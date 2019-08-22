@@ -13,9 +13,13 @@ FYI: This was tested with a MYSQL database created using [GCP MYSQL deployment](
 The deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
  
  "DB_HOST" is externally exposed IP address to access the MySQL database (The default valu is "localhost")
+ 
  "DB_USER" is the MySQL database username (The default value is "root")
+ 
  "DB_PASSWORD" is the MySQL database userpassword (The default valu is "password")
+ 
  "DB_NAME" is  name of the database for WordPress ( The default valu is "wordpress")
+ 
   
 
 Note: This is created as quick proof of concept.
