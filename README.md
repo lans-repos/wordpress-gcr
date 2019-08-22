@@ -12,7 +12,7 @@ FYI: This was tested with a MYSQL database created using [GCP MYSQL deployment](
 ## Deployment Parameters
 The deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
  
- "DB_HOST" is externally exposed IP address to access the MySQL database (The default valu is "localhost")
+ "DB_HOST" is externally exposed IP address to access the MySQL database (The default value is "localhost")
  
  "DB_USER" is the MySQL database username (The default value is "root")
  
