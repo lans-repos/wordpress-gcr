@@ -1,23 +1,28 @@
+#pulls the wordpress docker image so as to use the lastest wordpress supported php-apache version
 FROM wordpress:latest	
 
+# expose PORT 8080
+EXPOSE 8080
+
+# Use the PORT environment variable in Apache configuration files.
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
-COPY docker-entrypoint.sh /usr/local/bin/
-
+#specify container volume path
 VOLUME /var/www/html
 
+# downloads the latest version of wordpress from wordpress.org
 RUN set -ex; \
-	curl -o wordpress.tar.gz -fSL "https://en-ca.wordpress.org/latest-en_CA.tar.gz"; \
+	curl -o wordpress.tar.gz -fSL "https://wordpress.org/latest.tar.gz"; \
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 	tar -xzf *.tar.gz -C /usr/src/; \
 	rm *.tar.gz; \
 	chown -R www-data:www-data /usr/src/wordpress
 
-COPY  wordpress/wp-content/plugins/  /usr/src/wordpress/wp-content/plugins/
-
+# wordpress conf
 COPY  wp-config.php  /usr/src/wordpress/
 
-EXPOSE 8080
+#docker-entrypoint.sh
+COPY docker-entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
