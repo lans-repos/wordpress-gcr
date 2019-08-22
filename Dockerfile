@@ -1,4 +1,4 @@
-#pulls the wordpress docker image so as to use the lastest wordpress supported php-apache version
+#pulls the wordpress docker image get lastest phpX.X-apache image
 FROM wordpress:latest	
 
 # expose PORT 8080
@@ -10,7 +10,7 @@ RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/a
 #specify container volume path
 VOLUME /var/www/html
 
-# downloads the latest version of wordpress from wordpress.org
+# downloads the latest version of wordpress files  from wordpress.org
 RUN set -ex; \
 	curl -o wordpress.tar.gz -fSL "https://wordpress.org/latest.tar.gz"; \
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
