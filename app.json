@@ -2,22 +2,22 @@
   "name": "wordpress-gcr",
   "env": {
       "DB_HOST": {
-          "description": "IP address of MySQL Database.",
+          "description": "(external exposed) IP address of MySQL Database.",
           "value": "localhost",
           "required": true
       },
       "DB_USER": {
-          "description": "MySQL Database user name",
+          "description": "MySQL Database username",
           "value": "root",
           "required": true
       },
       "DB_PASSWORD": {
-          "description": "MySQL Database user password",
+          "description": "MySQL Database password",
           "value": "password",
           "required": true
       },
       "DB_NAME": {
-          "description": "The name of database",
+          "description": "The name of the database for WordPress",
           "value": "wordpress",
           "required": true
       }
