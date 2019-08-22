@@ -1,5 +1,5 @@
 {
-  "name": "wordpress cloudrun",
+  "name": "wordpress-gcr",
   "env": {
       "DB_HOST": {
           "description": "IP address of MySQL Database.",
