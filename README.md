@@ -2,7 +2,7 @@
 
 [![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/lans-repos/wordpress-gcr.git)
 
-Launch WordPress on Google Cloud Run. The wordpress image has the Google Cloud Storage (GCS) plugin which can used to load wordpress media files to a GCS bucket.
+Launch WordPress on Google Cloud Run. The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress image to enable upload of images to GCS bucket for persistent storage.
 
 ## Requirements
 A  MYSQL database that can be accessed remotely via external IP address.
@@ -23,3 +23,5 @@ The deployment will prompt for the following environment variables "DB_HOST","DB
   
 
 Note: This is created as quick proof of concept.
+
+
