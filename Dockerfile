@@ -19,10 +19,16 @@ RUN set -ex; \
         chown -R www-data:www-data /usr/src/wordpress
 # download zip and unzip        
 RUN apt-get update && apt-get install -y unzip zip;
+
 # downloand the Google Cloud Storage plugin for wordpress from wordpress.org	
 RUN curl -o gcs.zip -L "https://downloads.wordpress.org/plugin/gcs.0.1.4.zip" ; \
     unzip gcs.zip -d /usr/src/wordpress/wp-content/plugins/; \
     rm gcs.zip;
+    
+# download and install cloud_sql_proxy
+RUN apt-get update && apt-get install net-tools wget && \
+    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /usr/local/bin/cloud_sql_proxy && \ 
+    chmod +x /usr/local/bin/cloud_sql_proxy
     
 #docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/
