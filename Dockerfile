@@ -26,9 +26,9 @@ RUN curl -o gcs.zip -L "https://downloads.wordpress.org/plugin/gcs.0.1.4.zip" ; 
     rm gcs.zip;
     
 # download and install cloud_sql_proxy
-RUN apt-get update && apt-get install net-tools wget && \
-    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /usr/local/bin/cloud_sql_proxy && \ 
-    chmod +x /usr/local/bin/cloud_sql_proxy
+RUN apt-get update && apt-get install net-tools ; \
+    wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /usr/local/bin/cloud_sql_proxy; \ 
+    chmod +x /usr/local/bin/cloud_sql_proxy;
     
 #docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/
