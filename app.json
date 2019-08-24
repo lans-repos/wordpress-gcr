@@ -20,6 +20,11 @@
           "description": "The name of the database for WordPress",
           "value": "wordpress",
           "required": true
+      },
+      "CLOUDSQL_INSTANCE": {
+          "description": "Cloud SQL in the format <project.id>:<region>:<instance-name>",
+          "value": "",
+          "required": false
       }
   }
 }
