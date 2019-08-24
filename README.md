@@ -14,17 +14,19 @@ Note: The  MYSQL or Cloud SQL  database for the wordpress should be setup & read
 ## Deployment Parameters
 The deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
  
- "DB_HOST" is externally exposed IP address to access the MySQL database or the Cloud SQL host (The default value is "localhost")
+**"DB_HOST** is externally exposed IP address to access the MySQL database or the Cloud SQL host (The default value is "localhost")
  If you are using Cloud SQL set this to 127.0.0.1
  
- "DB_USER" is the MySQL or Cloud SQL  database username (The default value is "root")
+**"DB_USER"** is the MySQL or Cloud SQL  database username (The default value is "root")
  
- "DB_PASSWORD" is the MySQL or Cloud SQL database userpassword (The default value is "password")
+ **"DB_PASSWORD"** is the MySQL or Cloud SQL database userpassword (The default value is "password")
  
- "DB_NAME" is the name of the database for WordPress on MySQL or Cloud SQL ( The default value is "wordpress")
+**"DB_NAME"** is the name of the database for WordPress on MySQL or Cloud SQL ( The default value is "wordpress")
  
- "CLOUDSQL_INSTANCE" if you using Cloud SQL provide instance in the format poject.id:region:instance-name 
- This is the instance connection that you get from Cloud SQL Overiew Tab. 
+ **"CLOUDSQL_INSTANCE"** if you using Cloud SQL ,this is the Cloud SQL instance connection that you get from Cloud SQL Overiew Tab. 
+ 
+ This should be provided in the  format poject.id:region:instance-name 
+
  This is not a required parameter. It can therefore be ignored if you are not using not using Cloud SQL.
  
  
