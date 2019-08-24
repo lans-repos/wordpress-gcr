@@ -5,23 +5,26 @@
 Launch WordPress on Google Cloud Run. The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress image to enable upload of images to GCS bucket for persistent storage.
 
 ## Requirements
-A  MYSQL database that can be accessed remotely via external IP address.
-
+A  MYSQL database that can be accessed remotely via external IP address  OR  Cloud SQL database.
 FYI: This was tested with a MYSQL database created using [GCP MYSQL deployment](https://console.cloud.google.com/marketplace/details/click-to-deploy-images/mysql?q=MYSQL&id=59e776b5-96fb-4644-8a6e-92c2756ebef5)
-
+i
 ## Deployment Parameters
 The deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
  
- "DB_HOST" is externally exposed IP address to access the MySQL database (The default value is "localhost")
+ "DB_HOST" is externally exposed IP address to access the MySQL database or the Cloud SQL host (The default value is "localhost")
+ If you are using Cloud SQL set this to 127.0.0.1
  
- "DB_USER" is the MySQL database username (The default value is "root")
+ "DB_USER" is the MySQL or Cloud SQL  database username (The default value is "root")
  
- "DB_PASSWORD" is the MySQL database userpassword (The default value is "password")
+ "DB_PASSWORD" is the MySQL or Cloud SQL database userpassword (The default value is "password")
  
- "DB_NAME" is  name of the database for WordPress ( The default value is "wordpress")
+ "DB_NAME" is the name of the database for WordPress on MySQL or Cloud SQL ( The default value is "wordpress")
  
-  
-
+ "CLOUDSQL_INSTANCE" if you using Cloud SQL provide instance in the format poject.id:region:instance-name 
+ This is the instance connection that you get from Cloud SQL Overiew Tab. 
+ This is not a required parameters it can therefore be ignored if you are not using not using Cloud SQL.
+ 
+ 
 Note: This is created as quick proof of concept.
 
 
