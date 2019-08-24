@@ -1,5 +1,7 @@
 #!/bin/bash
 set -euo pipefail
+# Start the sql proxy
+cloud_sql_proxy -instances=$CLOUDSQL_INSTANCE=tcp:3306 &
 
 # usage: file_env VAR [DEFAULT]
 #    ie: file_env 'XYZ_DB_PASSWORD' 'example'
