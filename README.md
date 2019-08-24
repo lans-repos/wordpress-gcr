@@ -23,11 +23,11 @@ The deployment will prompt for the following environment variables "DB_HOST","DB
  
 **"DB_NAME"** is the name of the database for WordPress on MySQL or Cloud SQL ( The default value is "wordpress")
  
- **"CLOUDSQL_INSTANCE"** if you using Cloud SQL ,this is the Cloud SQL instance connection that you get from Cloud SQL Overiew Tab. 
+ **"CLOUDSQL_INSTANCE"** if you using Cloud SQL, this is the Cloud SQL instance connection that you get from Cloud SQL Overiew Tab. 
  
- This should be provided in the  format poject.id:region:instance-name 
+ This should be provided in the  format **poject.id:region:instance-name**
 
- This is not a required parameter. It can therefore be ignored if you are not using not using Cloud SQL.
+ CLOUDSQL_INSTANCE is not a required parameter. It can therefore be ignored if you are not using not using Cloud SQL.
  
  
 Note: This is created as quick proof of concept.
