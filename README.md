@@ -2,12 +2,15 @@
 
 [![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/lans-repos/wordpress-gcr.git)
 
-Launch WordPress on Google Cloud Run. The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress image to enable upload of images to GCS bucket for persistent storage.
+Launch WordPress on Google Cloud Run. 
+
+The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress image to enable upload of images to GCS bucket for persistent storage.
 
 ## Requirements
 A  MYSQL database that can be accessed remotely via external IP address  OR  Cloud SQL database.
-FYI: This was tested with a MYSQL database created using [GCP MYSQL deployment](https://console.cloud.google.com/marketplace/details/click-to-deploy-images/mysql?q=MYSQL&id=59e776b5-96fb-4644-8a6e-92c2756ebef5)
-i
+
+Note: The  MYSQL or Cloud SQL  database for the wordpress should be setup & ready before you click the Run on Google Cloud Button.
+
 ## Deployment Parameters
 The deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
  
@@ -22,7 +25,7 @@ The deployment will prompt for the following environment variables "DB_HOST","DB
  
  "CLOUDSQL_INSTANCE" if you using Cloud SQL provide instance in the format poject.id:region:instance-name 
  This is the instance connection that you get from Cloud SQL Overiew Tab. 
- This is not a required parameters it can therefore be ignored if you are not using not using Cloud SQL.
+ This is not a required parameter. It can therefore be ignored if you are not using not using Cloud SQL.
  
  
 Note: This is created as quick proof of concept.
