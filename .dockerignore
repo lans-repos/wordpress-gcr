@@ -2,3 +2,4 @@
 /plugins/*
 /themes/*
 /wordpress/*
+!/WordPress/wp-content/*
