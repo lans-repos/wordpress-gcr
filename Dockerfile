@@ -28,6 +28,10 @@ RUN chmod +x /usr/local/bin/cloud_sql_proxy;
 RUN curl -o gcs.zip -L "https://downloads.wordpress.org/plugin/gcs.0.1.4.zip" ; \
     unzip gcs.zip -d /usr/src/wordpress/wp-content/plugins/; \
     rm gcs.zip;
+    
+ # COPY locally updated plugins & themes to the new image for redployment to Cloud RUN
+ COPY wordpress/wp-content/plugins/  /usr/src/wordpress/wp-content/plugins/
+ COPY wordpress/wp-content/themes/  /usr/src/wordpress/wp-content/themes/
        
 #docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/
