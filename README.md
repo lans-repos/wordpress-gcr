@@ -35,7 +35,7 @@ The Run on Google Cloud deployment will prompt for the following environment var
  
 **"DB_USER"** is the MySQL or Cloud SQL  database username (The default value is "root")
  
- **"DB_PASSWORD"** is the MySQL or Cloud SQL database userpassword (The default value is "password")
+ **"DB_PASSWORD"** is the MySQL or Cloud SQL database user password (The default value is "password")
  
 **"DB_NAME"** is the name of the database for WordPress on MySQL or Cloud SQL ( The default value is "wordpress")
  
