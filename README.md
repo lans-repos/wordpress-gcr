@@ -43,7 +43,7 @@ The deployment will prompt for the following environment variables "DB_HOST","DB
  
  
 
-## Update WordPress plugins, and themes
+## Update / Install / Delete WordPress plugins or themes
 
 This has to done locally in Google Cloud Shell and then pushed (i.e redployed) to Cloud Run and requires the use of the wp-cli utility and the wordpress directory included in this repository.
 
