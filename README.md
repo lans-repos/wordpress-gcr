@@ -49,7 +49,7 @@ The Run on Google Cloud deployment will prompt for the following environment var
   
     If your are using a Cloud SQL database then deploy using ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --add-cloudsql-instances INSTANCE-CONNECTION-NAME```
 
-## Post Deployment & The GCS Wordpress plugin
+## Post Deployment & the GCS Wordpress plugin
 
 Coming Soon...
 
