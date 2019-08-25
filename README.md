@@ -84,9 +84,12 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
         
     
-       In the above commands  [PROJECT-ID] is your gcp project-id. The command also assume that Cloud Run Service name is unchange and remains wordpress-gcr.
+       In the above commands  [PROJECT-ID] is your gcp project-id.
        
-       The proccess of rebuilding the docker image and redeploying to Cloud Run could be automated using Cloud Build Triggers.
+       The command also assume that the Cloud Run Service name is unchange and remains wordpress-gcr.
+       
+       
+  The proccess of rebuilding the docker image and redeploying it to the Cloud Run Service could be automated using [Cloud Build Triggers](https://cloud.google.com/run/docs/continuous-deployment?_ga=2.244497477.-1913607253.1558898014).
 
 * The wordpress core can not be updated via this process. Since docker build process always pulls the latest wordpress docker image the wordpress core can be updated by just running the three commands step above.  
 
