@@ -78,11 +78,9 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
     
        In the above commands  [PROJECT-ID] is your gcp project-id. The command also assume that Cloud Run Service name is unchange and remains wordpress-gcr.
 
-* The wordpress core can not be updated via this process. 
+* The wordpress core can not be updated via this process. Since docker build process always pulls the latest wordpress docker image the wordpress core can be updated by just running the three commands step above.  
 
-Since docker build process always pulls the latest wordpress docker image the wordpress core can be updated by just running the three commands in step 5 even if you did not update the any plugin or theme.
-
-## Using Cloud Run Custom Domain the Wordpress deployment
+## Using Cloud Run Custom Domain on the Wordpress deployment
 
 If you decide to use Cloud Run Custom Domain mapping on the Wordpress deployment then you have to remember that Cloud Run only maps a  domain to /, but not to a specific base path. This means the url https:cutomdomain.com/contact  will not be mapped !
 
