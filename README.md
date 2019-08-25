@@ -86,9 +86,9 @@ Since docker build process always pulls the latest wordpress docker image the wo
 
 If you decide to use Cloud Run Custom Domain mapping on the Wordpress deployment then you have to remember that Cloud Run only maps a  domain to /, but not to a specific base path. This means the url https:cutomdomain.com/contact  will not be mapped !
 
-In order for the custom domain to work with all path urls you will need:
+To map the custom domain to all path urls you should:
 
-* Clone the repositry to clone ( if you have not already)
+* Clone the repositry to Cloud Shell ( that is if you have not already)
 
 * Edit the wp-config.php files to add 
 
