@@ -9,11 +9,14 @@ The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress imag
 Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
 
 ## Requirements
-A Cloud SQL database **OR** external MySQL database that can be accessed remotely via external IP address.
 
-Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
+* A Cloud SQL database **OR** external MySQL database that can be accessed remotely via external IP address.
 
-Note: A Cloud SQL database can be created quickly by downloading the  [createCloudSQL.sh](https://github.com/lans-repos/wordpress-gcr/blob/master/createCloudSQL.sh) script and running it in Cloud Shell.
+  * Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
+
+  * Note: A Cloud SQL database can be created quickly by downloading the  [createCloudSQL.sh](https://github.com/lans-repos/wordpress-gcr/blob/master/createCloudSQL.sh) script and running it in Cloud Shell.
+
+* A Google Cloud Storage (GCS) Bucket with its object default permission configured for allUsers. See this [plugin support response](https://wordpress.org/support/topic/google-storage-not-work/page/2/#post-8897852) on how to configure the  GCS bucket so that uploaded images are publicly available.
 
 ## Deployment Parameters
 The Run on Google Cloud deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
@@ -61,7 +64,7 @@ The Run on Google Cloud deployment will prompt for the following environment var
  
 ## Post Deployment & the GCS Wordpress plugin
 
-Coming Soon...
+After deployment & installionton of Wordpress , sign into WP-ADMIN, go to plugins, activate the GCS plugin , go the GCS plugin settings and input the url of the GCS bucket.
 
 
 ## Update / Install / Delete WordPress plugins or themes
