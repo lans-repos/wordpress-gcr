@@ -60,6 +60,8 @@ This has to done locally in Google Cloud Shell and then pushed (i.e redployed) t
     
     $ vendor/bin/wp theme update --all
     
+* You can also use of the several wp plugin <command> or wp theme <command>  to install , delete, activate act upon any individual plugins or themes.
+
 * You can also from inside the wordpress directory, run the command wp server and then use the Cloud Shell Web Preview feature to access the a local version of the wordpress site. You can login to wordpress admin and update plugins or themes.
 
 * After locally updating plugins or themes, you need to rebuild the docker image, push it to cloud registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
