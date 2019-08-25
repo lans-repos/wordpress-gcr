@@ -22,7 +22,7 @@
           "required": true
       },
       "CLOUDSQL_INSTANCE": {
-          "description": "Cloud SQL in the format <project.id>:<region>:<instance-name>",
+          "description": "Cloud SQL in the format <project.id>:<region>:<instance-name>"
       }
   }
 }
