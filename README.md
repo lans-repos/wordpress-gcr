@@ -127,5 +127,19 @@ To map the custom domain to all path urls you should:
 
 Coming Soon :)
 
+## Does it even make sense to run Wordpress in Cloud Run ( i.e. stateless severless container) ?
+
+That is a great question ! 
+
+I will admit that it makes Wordpress administration & update cumbersome and time consuming.Hencce it might only appeal to an enthustiast or a DevOps that likes over-engineered solutions.
+
+I did however observe that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) also uses a stateless severless architecture. I am therefore going to assume that stateless severless Wordpress does have some technically benefits. :)
+
+
+
+
+
+
+
 
 
