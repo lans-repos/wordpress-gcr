@@ -44,23 +44,25 @@ The Run on Google Cloud deployment will prompt for the following environment var
  
  * Deploy the image from Cloud Registry to Cloud Run.
  
-     If your are using a Cloud SQL database then deploy using the command after replacing  PROJECT-ID, DB_NAME, DB_USER & CLOUDSQL_INSTANCE with the relevant values: 
+    If your are using a Cloud SQL database then deploy using the command after replacing  PROJECT-ID, DB_NAME, DB_USER, DB_PASSWORD & CLOUDSQL_INSTANCE with the relevant values: 
             
         
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --set-env-vars DB_HOST='127.0.0.1',DB_NAME=<dbname>,DB_USER=<dbuser>,DB_PASSWORD=<dbpass>,CLOUDSQL_INSTANCE='poject.id:region:instance-name' 
 
        
-     If you are using an exertnal MysQL databas then deploy using the command after replacing  PROJECT-ID, DB_HOST, DB_NAME &DB_USER with the relevant values: 
+     If you are using an exertnal MysQL databas then deploy using the command after replacing  PROJECT-ID, DB_HOST, DB_NAME, DB_USER & DB_PASSWORD with the relevant values: 
     
   
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --set-env-vars DB_HOST=<dbhost>,DB_NAME=<dbname>,DB_USER=<dbuser>,DB_PASSWORD=<dbpass>
         
 
  
-  
+ 
+ 
 ## Post Deployment & the GCS Wordpress plugin
 
 Coming Soon...
+
 
 ## Update / Install / Delete WordPress plugins or themes
 
@@ -72,17 +74,22 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
 
      ``` composer require wp-cli/wp-cli-bundle```
 
-* Copy the wp-config.php  file into the wordpress direcotry ( i.e  cp  wp-config.php   /wordpress/  )   
+* A wp-config.php file , with the correct values for the DB_HOST, DB_NAME, DB_USER , DB_PASSWORD , CLOUDSQL_INSTANCE variables , **is required in the wordpress directory before you can use the wp-cli utility**. 
 
-* From inside the wordpress directory ( i.e. cd to wordpress ) you can update all  plugins and themes using the commands:
+  * This will be true if image had already be deployed( using the button  or mannually)  to Cloud Run.
+
+  * If the wp-config.php is not present in the wordpress directory or if the file is present but does not have the correct values for  DB_HOST, DB_NAME, DB_USER & DB_PASSWORD, CLOUDSQL_INSTANCE variables then copy wp-config.php from the root directory to the wordpress directory and provide the correct values for DB_HOST, DB_NAME, DB_USER & DB_PASSWORD, CLOUDSQL_INSTANCE variables
+
+* From inside the wordpress directory ( i.e. cd to wordpress ) you can now update   plugins and themes using the commands wp cli commands:
 
     ``` vendor/bin/wp plugin update --all```
     
     ``` vendor/bin/wp theme update --all```
     
-* You can also use of the several wp plugin <command> or wp theme <command>  to install , delete, activate act upon any individual plugins or themes.
+* You can also use the several ```wp plugin <command> ``` or ```wp theme <command> ```  to install , delete, activate, or act upon any individual plugins or themes.
 
-* You can also from inside the wordpress directory, run the command wp server and then use the Cloud Shell Web Preview feature to access the a local version of the wordpress site. You can login to wordpress admin and update plugins or themes.
+* You can also from inside the wordpress directory, run the command ```wp server``` and then use the Cloud Shell Web Preview feature to access the a local version of the wordpress site. You can login to wordpress admin and update plugins or themes. 
+
 
 * After locally updating plugins or themes, you need to rebuild the docker image, push it to cloud registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
 
@@ -140,7 +147,7 @@ Coming Soon :)
 
 That is a great question ! 
 
-I will admit that Cloud Run's stateless container model makes Wordpress administration & update cumbersome and time consuming.Hence this  might only appeal to an enthustiast or a DevOps that likes over-engineered solutions.
+I will admit that Cloud Run's stateless container model makes Wordpress admini & update cumbersome and time consuming. Hence this  might only appeal to an enthustiast or a DevOps that likes over-engineered solutions.
 
 I did however observe that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) also uses a stateless severless architecture. I am therefore going to assume that stateless severless Wordpress does have some technically benefits. :)
 
