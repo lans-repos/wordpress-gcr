@@ -6,6 +6,18 @@ Launch WordPress on Google Cloud Run.
 
 The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress image to enable upload of images to GCS bucket for persistent storage.
 
+**If you do not want to use the above "Run on Google Cloud Button", then you can:**
+
+ 1.Clone the repository ( using the command git clone https://github.com/lans-repos/wordpress-gcr.git)
+ 
+ 2.Edit the wp-config.php file to provide relevant values for  "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME" 
+ 
+ 3.Build the docker image (using the command  docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .  )
+ 
+ 4.Push the image to Cloud Registry (using the command  docker push gcr.io/[PROJECT-ID]/wordpress-gcr )
+ 
+ 5.Deploy the image from Cloud Registry to Cloud Run. (using the command gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr )
+
 ## Requirements
 A  MYSQL database that can be accessed remotely via external IP address  OR  Cloud SQL database.
 
@@ -31,5 +43,39 @@ The deployment will prompt for the following environment variables "DB_HOST","DB
  
  
 Note: This is created as quick proof of concept.
+
+## Update WordPress core , plugins, and themes
+
+This has to done locally in Google Cloud Shell and the pushed (i.e redployed) to Cloud Run and requires the use of the wp-cli utility and the wordpress directory included in this repository.
+
+1.  Install the wp-cli utility using the command:
+
+     $ composer require wp-cli/wp-cli-bundle
+
+2. From inside the wordpress directory, you can run the "wp" command to update Wordpress itself using the command:
+
+     $ vendor/bin/wp core update --path=wordpress
+    
+3. You can also update all the plugins and themes using the commands:
+
+    $ vendor/bin/wp plugin update --all
+    
+    $ vendor/bin/wp theme update --all
+    
+4. You can also from inside the wordpress directory, run the command wp server and then use the Cloud Shell Web Preview feature to access the a local version of the wordpress site. You can login to wordpress admin and update wordpress, plugins or themes.
+
+5. After locally updating wordpress core , plugins or themes, you need to rebuild the docker image, push it to cloud registry and then push the updated image  to Cloud Run by running the following three commands:
+
+        docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .
+        
+        docker push gcr.io/[PROJECT-ID]/wordpress-gcr
+
+        gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
+        
+     
+ In the above commands  [PROJECT-ID] is your gcp project-id. The command also assume that Cloud Run Service name is unchange and remains wordpress-gcr
+   
+
+
 
 
