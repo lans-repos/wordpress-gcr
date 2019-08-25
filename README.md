@@ -74,7 +74,9 @@ This has to done locally in Google Cloud Shell and then pushed (i.e redployed) t
     
        In the above commands  [PROJECT-ID] is your gcp project-id. The command also assume that Cloud Run Service name is unchange and remains wordpress-gcr.
 
-* The wordpress core can not be updated via this process.Since the docker build process always pulls the latest wordpress docker image you can update the wordpress core by just running the three commands in step 5 even if you did not update the any plugin or theme.
+* The wordpress core can not be updated via this process. 
+
+Since docker build process always pulls the latest wordpress docker image  you can update the wordpress core by just running the three commands in step 5 even if you did not update the any plugin or theme.
 
 
    
