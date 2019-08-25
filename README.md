@@ -2,11 +2,11 @@
 
 [![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/lans-repos/wordpress-gcr.git)
 
-Launch WordPress container on Google Cloud Run that uses a Cloud SQL or external MySQL database.
+Launch WordPress container on Google Cloud Run that uses a Cloud SQL or an external MySQL database.
 
 The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress image to enable upload of images to GCS bucket for persistent storage.
 
-Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before you click the Run on Google Cloud Button.
+Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
 
 **If you do not want to use the above "Run on Google Cloud Button", then you can:**
 
@@ -25,7 +25,7 @@ Note: The Cloud SQL or external MySQL database for the wordpress should be setup
 ## Requirements
 A Cloud SQL database **OR** external MySQL database that can be accessed remotely via external IP address.
 
-Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before you click the Run on Google Cloud Button.
+Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
 
 ## Deployment Parameters
 The Run on Google Cloud deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
