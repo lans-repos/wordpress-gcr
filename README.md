@@ -45,13 +45,9 @@ The Run on Google Cloud deployment will prompt for the following environment var
  
  * Push the image to Cloud Registry (using the command ``` docker push gcr.io/[PROJECT-ID]/wordpress-gcr ```)
  
- * Deploy the image from Cloud Registry to Cloud Run using the command 
- 
-     ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr```
+ * Deploy the image from Cloud Registry to Cloud Run(using the command ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr```)
   
-  If your are using a Cloud SQL database then command for deployment is
-  
-     ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --add-cloudsql-instances INSTANCE-CONNECTION-NAME```
+    If your are using a Cloud SQL database then deploy using ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --add-cloudsql-instances INSTANCE-CONNECTION-NAME```
 
 ## Post Deployment & The GCS Wordpress plugin
 
