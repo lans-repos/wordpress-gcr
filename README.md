@@ -52,16 +52,17 @@ This has to done locally in Google Cloud Shell and then pushed (i.e redployed) t
 
      $ composer require wp-cli/wp-cli-bundle
 
-    
-2. From inside the wordpress directory ( i.e. cd wordpress ) you can update all  plugins and themes using the commands:
+2. Copy the wp-config.php  file into the wordpress direcotry ( i.e  cp  wp-config.php  /wordpress/  )   
+
+3. From inside the wordpress directory ( i.e. cd to wordpress ) you can update all  plugins and themes using the commands:
 
     $ vendor/bin/wp plugin update --all
     
     $ vendor/bin/wp theme update --all
     
-3. You can also from inside the wordpress directory, run the command wp server and then use the Cloud Shell Web Preview feature to access the a local version of the wordpress site. You can login to wordpress admin and update wordpress, plugins or themes.
+4. You can also from inside the wordpress directory, run the command wp server and then use the Cloud Shell Web Preview feature to access the a local version of the wordpress site. You can login to wordpress admin and update plugins or themes.
 
-5. After locally updating wordpress core , plugins or themes, you need to rebuild the docker image, push it to cloud registry and then push the updated image  to Cloud Run by running the following three commands:
+5. After locally updating plugins or themes, you need to rebuild the docker image, push it to cloud registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
 
         docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .
         
@@ -73,6 +74,8 @@ This has to done locally in Google Cloud Shell and then pushed (i.e redployed) t
 In the above commands  [PROJECT-ID] is your gcp project-id. The command also assume that Cloud Run Service name is unchange and remains wordpress-gcr.
 
 6. The wordpress core can not be updated via this process.Since the docker build process always pulls the latest wordpress docker image you can update the wordpress core by just running the three commands in step 5 even if you did not update the any plugin or theme.
+
+
    
 
 
