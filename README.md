@@ -92,7 +92,7 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
 
 If you decide to use Cloud Run Custom Domain mapping on the Wordpress deployment then you have to remember that Cloud Run only maps a  domain to /, but not to a specific base path. 
 
-**This means a url path like https://cutomdomain.com/contact.php  will not be mapped !**
+**This means a url path like https://customdomain.com/contact.php  will not be mapped !**
 
 To map the custom domain to all path urls you should:
 
