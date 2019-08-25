@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "This script auotmates the creation of CloudSQL Instance & database on GCP"
+echo "This script automates the creation of a CloudSQL Instance & database on GCP"
 
 read -p "Enter Chosen Name for the CloudSQL Instance: "  instanceName
 read -p "Enter Chosen Database Name: "  databaseName
