@@ -8,9 +8,10 @@ The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress imag
 
 Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
 
-
 ## Requirements
 A Cloud SQL database **OR** external MySQL database that can be accessed remotely via external IP address.
+
+Note: A Cloud SQL database can be created by downloading the script [createCloudSQL.sh](https://github.com/lans-repos/wordpress-gcr/blob/master/createCloudSQL.sh) script from repository and running it in Cloud Shell.
 
 Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
 
