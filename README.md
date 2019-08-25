@@ -8,19 +8,6 @@ The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress imag
 
 Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
 
-**If you do not want to use the above "Run on Google Cloud Button", then you can:**
-
- * Clone the repository ( using the command ```git clone https://github.com/lans-repos/wordpress-gcr.git```)
- 
- * Cd to wordpress-gcr 
- 
- * Edit the wp-config.php file to provide relevant values for  "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME" 
- 
- * Build the docker image (using the command ``` docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .  ```)
- 
- * Push the image to Cloud Registry (using the command ``` docker push gcr.io/[PROJECT-ID]/wordpress-gcr ```)
- 
- * Deploy the image from Cloud Registry to Cloud Run. (using the command ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr``` )
 
 ## Requirements
 A Cloud SQL database **OR** external MySQL database that can be accessed remotely via external IP address.
@@ -43,6 +30,22 @@ The Run on Google Cloud deployment will prompt for the following environment var
 
  CLOUDSQL_INSTANCE is not a required parameter. It can therefore be ignored if you are not using not using Cloud SQL.
  
+## Deploy Manually
+**If you do not want to use the above "Run on Google Cloud Button", then you can:**
+
+ * Clone the repository ( using the command ```git clone https://github.com/lans-repos/wordpress-gcr.git```)
+ 
+ * Cd to wordpress-gcr 
+ 
+ * Edit the wp-config.php file to provide relevant values for  "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME". If you are using Cloud SQl    database then set "DB_HOST" to 127.0.0.1.
+   
+ 
+ * Build the docker image (using the command ``` docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .  ```)
+ 
+ * Push the image to Cloud Registry (using the command ``` docker push gcr.io/[PROJECT-ID]/wordpress-gcr ```)
+ 
+ * Deploy the image from Cloud Registry to Cloud Run. (using the command ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr``` ). If your are using Cloud SQL database then command for deploymennt is ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --add-cloudsql-instances INSTANCE-CONNECTION-NAME```
+
 ## Post Deployment & The GCS Wordpress plugin
 
 Coming Soon...
@@ -112,9 +115,7 @@ To map the custom domain to all path urls you should:
         docker push gcr.io/[PROJECT-ID]/wordpress-gcr
 
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
- 
-
-   
+  
 ## Firebase Integration
 
 Coming Soon :)
