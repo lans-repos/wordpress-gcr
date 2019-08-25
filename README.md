@@ -46,7 +46,7 @@ Note: This is created as quick proof of concept.
 
 ## Update WordPress core , plugins, and themes
 
-This has to done locally in Google Cloud Shell and the pushed (i.e redployed) to Cloud Run and requires the use of the wp-cli utility and the wordpress directory included in this repository.
+This has to done locally in Google Cloud Shell and then pushed (i.e redployed) to Cloud Run and requires the use of the wp-cli utility and the wordpress directory included in this repository.
 
 1.  Install the wp-cli utility using the command:
 
