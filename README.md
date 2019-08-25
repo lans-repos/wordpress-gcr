@@ -49,6 +49,8 @@ The Run on Google Cloud deployment will prompt for the following environment var
 
 This has to done locally in Google Cloud Shell and then pushed (i.e redployed) to Cloud Run and requires the use of the wp-cli utility and the wordpress directory included in this repository.
 
+Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" it might be advisable to return to Cloud Shell  Default enviroment and pull a clone of this repository before you start any of the steps below:
+
 *  Install the wp-cli utility using the command:
 
      $ composer require wp-cli/wp-cli-bundle
