@@ -2,4 +2,5 @@
 /plugins/*
 /themes/*
 /wordpress/*
-!/WordPress/wp-content/*
+!/wordpress/wp-content/plugins
+!/wordpress/wp-content/themes
