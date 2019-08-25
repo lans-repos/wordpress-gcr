@@ -2,9 +2,11 @@
 
 [![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/lans-repos/wordpress-gcr.git)
 
-Launch WordPress container on Google Cloud Run that uses a Cloud SQL or external MySQL database. 
+Launch WordPress container on Google Cloud Run that uses a Cloud SQL or external MySQL database.
 
 The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress image to enable upload of images to GCS bucket for persistent storage.
+
+Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before you click the Run on Google Cloud Button.
 
 **If you do not want to use the above "Run on Google Cloud Button", then you can:**
 
@@ -21,9 +23,9 @@ The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress imag
  * Deploy the image from Cloud Registry to Cloud Run. (using the command ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr``` )
 
 ## Requirements
-A  MYSQL database that can be accessed remotely via external IP address  OR  a Cloud SQL database.
+A Cloud SQL database **OR** external MySQL database that can be accessed remotely via external IP address.
 
-Note: The  MYSQL or Cloud SQL  database for the wordpress should be setup & ready before you click the Run on Google Cloud Button.
+Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before you click the Run on Google Cloud Button.
 
 ## Deployment Parameters
 The Run on Google Cloud deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
@@ -76,7 +78,7 @@ This has to done locally in Google Cloud Shell and then pushed (i.e redployed) t
 
 * The wordpress core can not be updated via this process. 
 
-Since docker build process always pulls the latest wordpress docker image  you can update the wordpress core by just running the three commands in step 5 even if you did not update the any plugin or theme.
+Since docker build process always pulls the latest wordpress docker image the wordpress core can be updated by just running the three commands in step 5 even if you did not update the any plugin or theme.
 
 
    
