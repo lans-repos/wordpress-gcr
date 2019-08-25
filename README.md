@@ -21,7 +21,7 @@ The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress imag
  * Deploy the image from Cloud Registry to Cloud Run. (using the command ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr``` )
 
 ## Requirements
-A  MYSQL database that can be accessed remotely via external IP address  OR  Cloud SQL database.
+A  MYSQL database that can be accessed remotely via external IP address  OR  a Cloud SQL database.
 
 Note: The  MYSQL or Cloud SQL  database for the wordpress should be setup & ready before you click the Run on Google Cloud Button.
 
