@@ -110,8 +110,7 @@ To map the custom domain to all path urls you should:
         
        define( 'WP_SITEURL', 'https://customdomain.com/' );
 
-       gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
-        
+            
         with https:cutomdomain.com refering to your custom domain.
  
  
