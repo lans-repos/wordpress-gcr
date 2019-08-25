@@ -12,27 +12,27 @@ Note: The Cloud SQL or external MySQL database for the wordpress should be setup
 
 * A Cloud SQL database **OR** external MySQL database that can be accessed remotely via external IP address.
 
-  * Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
+  * The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
 
-  * Note: A Cloud SQL database can be created quickly by downloading the  [createCloudSQL.sh](https://github.com/lans-repos/wordpress-gcr/blob/master/createCloudSQL.sh) script and running it in Cloud Shell.
+  * A Cloud SQL database can be created quickly by downloading the  [createCloudSQL.sh](https://github.com/lans-repos/wordpress-gcr/blob/master/createCloudSQL.sh) script and running it in Cloud Shell.
 
 * A Google Cloud Storage (GCS) Bucket with its object default permission configured for allUsers. See this [plugin support response](https://wordpress.org/support/topic/google-storage-not-work/page/2/#post-8897852) on how to configure the  GCS bucket so that uploaded images are publicly available.
 
 ## Deployment Parameters
 The Run on Google Cloud deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
  
-**"DB_HOST** is externally exposed IP address to access the MySQL database or the Cloud SQL host (The default value is "localhost")
+* **"DB_HOST** is externally exposed IP address to access the MySQL database or the Cloud SQL host (The default value is "localhost")
  If you are using Cloud SQL set this to 127.0.0.1
  
-**"DB_USER"** is the MySQL or Cloud SQL  database username (The default value is "root")
+* **"DB_USER"** is the MySQL or Cloud SQL  database username (The default value is "root")
  
- **"DB_PASSWORD"** is the MySQL or Cloud SQL database user password (The default value is "password")
+* **"DB_PASSWORD"** is the MySQL or Cloud SQL database user password (The default value is "password")
  
-**"DB_NAME"** is the name of the database for WordPress on MySQL or Cloud SQL ( The default value is "wordpress")
+* **"DB_NAME"** is the name of the database for WordPress on MySQL or Cloud SQL ( The default value is "wordpress")
  
- **"CLOUDSQL_INSTANCE"** if you using Cloud SQL, this is the Cloud SQL instance connection name that you get from Cloud SQL Overiew Tab. This should be provided in the  format **poject.id:region:instance-name**
+* **"CLOUDSQL_INSTANCE"** if you using Cloud SQL, this is the Cloud SQL instance connection name that you get from Cloud SQL Overiew Tab. This should be provided in the  format **poject.id:region:instance-name**
 
- CLOUDSQL_INSTANCE is not a required parameter. It can therefore be ignored if you are not using not using Cloud SQL.
+  * CLOUDSQL_INSTANCE is not a required parameter. It can therefore be ignored if you are not using not using Cloud SQL.
  
 ## Deploy Manually
 **If you do not want to use the above "Run on Google Cloud Button", then you can:**
