@@ -127,7 +127,7 @@ To map the custom domain to all path urls you should:
 
 Coming Soon :)
 
-## Does it even make sense to run Wordpress in Cloud Run ( i.e. stateless severless container) ?
+## Does it even make sense to run Wordpress in Cloud Run ?
 
 That is a great question ! 
 
