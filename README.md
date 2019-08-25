@@ -82,9 +82,40 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
 
 Since docker build process always pulls the latest wordpress docker image the wordpress core can be updated by just running the three commands in step 5 even if you did not update the any plugin or theme.
 
+## Using Cloud Run Custom Domain the Wordpress deployment
+
+If you decide to use Cloud Run Custom Domain mapping on the Wordpress deployment then you have to remember that Cloud Run only maps a  domain to /, but not to a specific base path. This means the url https:cutomdomain.com/contact  will not be mapped !
+
+In order for the custom domain to work with all path urls you will need:
+
+* Clone the repositry to clone ( if you have not already)
+
+* Edit the wp-config.php files to add 
+
+
+       define( 'WP_HOME', 'https://customdomain.com' ); 
+        
+       define( 'WP_SITEURL', 'https://customdomain.com' );
+
+       gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
+        
+        with https:cutomdomain.com refering to your custom domain.
+ 
+ 
+   
+ * Then rebuild the docker image, push it to cloud registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
+
+        docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .
+        
+        docker push gcr.io/[PROJECT-ID]/wordpress-gcr
+
+        gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
+ 
 
    
+## Firebase Integration
 
+Coming Soon :)
 
 
 
