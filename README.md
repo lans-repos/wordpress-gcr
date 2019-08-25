@@ -58,15 +58,15 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
 
 *  Install the wp-cli utility using the command:
 
-     $ composer require wp-cli/wp-cli-bundle
+     ``` composer require wp-cli/wp-cli-bundle```
 
 * Copy the wp-config.php  file into the wordpress direcotry ( i.e  cp  wp-config.php   /wordpress/  )   
 
 * From inside the wordpress directory ( i.e. cd to wordpress ) you can update all  plugins and themes using the commands:
 
-    $ vendor/bin/wp plugin update --all
+    ``` vendor/bin/wp plugin update --all```
     
-    $ vendor/bin/wp theme update --all
+    ``` vendor/bin/wp theme update --all```
     
 * You can also use of the several wp plugin <command> or wp theme <command>  to install , delete, activate act upon any individual plugins or themes.
 
