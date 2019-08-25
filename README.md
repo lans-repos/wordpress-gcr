@@ -10,6 +10,8 @@ The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress imag
 
  * Clone the repository ( using the command ```git clone https://github.com/lans-repos/wordpress-gcr.git```)
  
+ * Cd to wordpress-gcr 
+ 
  * Edit the wp-config.php file to provide relevant values for  "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME" 
  
  * Build the docker image (using the command ``` docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .  ```)
@@ -35,14 +37,11 @@ The deployment will prompt for the following environment variables "DB_HOST","DB
  
 **"DB_NAME"** is the name of the database for WordPress on MySQL or Cloud SQL ( The default value is "wordpress")
  
- **"CLOUDSQL_INSTANCE"** if you using Cloud SQL, this is the Cloud SQL instance connection that you get from Cloud SQL Overiew Tab. 
- 
- This should be provided in the  format **poject.id:region:instance-name**
+ **"CLOUDSQL_INSTANCE"** if you using Cloud SQL, this is the Cloud SQL instance connection name that you get from Cloud SQL Overiew Tab. This should be provided in the  format **poject.id:region:instance-name**
 
  CLOUDSQL_INSTANCE is not a required parameter. It can therefore be ignored if you are not using not using Cloud SQL.
  
  
-Note: This is created as quick proof of concept.
 
 ## Update WordPress plugins, and themes
 
@@ -52,7 +51,7 @@ This has to done locally in Google Cloud Shell and then pushed (i.e redployed) t
 
      $ composer require wp-cli/wp-cli-bundle
 
-* Copy the wp-config.php  file into the wordpress direcotry ( i.e  cp  wp-config.php  /wordpress/  )   
+* Copy the wp-config.php  file into the wordpress direcotry ( i.e  cp  wp-config.php   /wordpress/  )   
 
 * From inside the wordpress directory ( i.e. cd to wordpress ) you can update all  plugins and themes using the commands:
 
