@@ -8,15 +8,15 @@ The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress imag
 
 **If you do not want to use the above "Run on Google Cloud Button", then you can:**
 
- * Clone the repository ( using the command git clone https://github.com/lans-repos/wordpress-gcr.git)
+ * Clone the repository ( using the command ```git clone https://github.com/lans-repos/wordpress-gcr.git```)
  
  * Edit the wp-config.php file to provide relevant values for  "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME" 
  
- * Build the docker image (using the command  docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .  )
+ * Build the docker image (using the command ``` docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .  ```)
  
- * Push the image to Cloud Registry (using the command  docker push gcr.io/[PROJECT-ID]/wordpress-gcr )
+ * Push the image to Cloud Registry (using the command ``` docker push gcr.io/[PROJECT-ID]/wordpress-gcr ```)
  
- * Deploy the image from Cloud Registry to Cloud Run. (using the command gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr )
+ * Deploy the image from Cloud Registry to Cloud Run. (using the command ```gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr``` )
 
 ## Requirements
 A  MYSQL database that can be accessed remotely via external IP address  OR  Cloud SQL database.
