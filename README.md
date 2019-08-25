@@ -43,7 +43,9 @@ The Run on Google Cloud deployment will prompt for the following environment var
 
  CLOUDSQL_INSTANCE is not a required parameter. It can therefore be ignored if you are not using not using Cloud SQL.
  
- 
+## Post Deployment & The GCS Wordpress plugin
+
+Coming Soon...
 
 ## Update / Install / Delete WordPress plugins or themes
 
