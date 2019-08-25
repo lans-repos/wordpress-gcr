@@ -11,9 +11,9 @@ Note: The Cloud SQL or external MySQL database for the wordpress should be setup
 ## Requirements
 A Cloud SQL database **OR** external MySQL database that can be accessed remotely via external IP address.
 
-Note: A Cloud SQL database can be created by downloading the script [createCloudSQL.sh](https://github.com/lans-repos/wordpress-gcr/blob/master/createCloudSQL.sh) script from repository and running it in Cloud Shell.
-
 Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
+
+Note: A Cloud SQL database can be created quickly by downloading the script [createCloudSQL.sh](https://github.com/lans-repos/wordpress-gcr/blob/master/createCloudSQL.sh) and running it in Cloud Shell.
 
 ## Deployment Parameters
 The Run on Google Cloud deployment will prompt for the following environment variables "DB_HOST","DB_USER","DB_PASSWORD", &"DB_NAME".
