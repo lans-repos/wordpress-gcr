@@ -154,6 +154,8 @@ I will admit that Cloud Run's stateless container model makes Wordpress admini &
 
 I did however observe that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) also uses a stateless severless architecture. I am therefore going to assume that stateless severless Wordpress does have some technically benefits. :)
 
+WordPress on Cloud Run might be a perfect & afforable for a site that gets periodic, unpredictable spikes of intense traffic. It will be be an expensive(due to Cloud Run's billing model) and non-ideal choice for a site that get regularly and consistent traffic.
+
 
 
 
