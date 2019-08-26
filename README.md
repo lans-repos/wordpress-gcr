@@ -96,7 +96,7 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
     
 * You can also use the several ```wp plugin <command> ``` or ```wp theme <command> ```  to install , delete, activate, or act upon any individual plugins or themes.
 
-* You can also, from inside the wordpress directory, run the wp-cli command ```wp server``` to locally launch PHP's built-in web server an then use  [Cloud Shell Web Preview feature](https://cloud.google.com/shell/docs/using-web-preview#previewing_the_application) to access the local version of the wordpress site. You can login to wordpress admin and update plugins or themes. 
+* You can also, from inside the wordpress directory, run the wp-cli command ```wp server``` to locally launch PHP's built-in web server and then use [Cloud Shell Web Preview feature](https://cloud.google.com/shell/docs/using-web-preview#previewing_the_application) to access the local version of the wordpress site. You can login to wordpress admin and update plugins or themes. 
 
 
 * After locally updating plugins or themes, you need to rebuild the docker image, push it to cloud registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
