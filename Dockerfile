@@ -37,7 +37,7 @@ RUN curl -o gcs.zip -L "https://downloads.wordpress.org/plugin/gcs.0.1.4.zip" ; 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh; 
 
-# wordpress conf
+# COPY wordpress config file
 COPY  wp-config.php  /usr/src/wordpress/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
