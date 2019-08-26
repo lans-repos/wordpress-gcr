@@ -126,9 +126,7 @@ If you decide to use Cloud Run Custom Domain mapping on the Wordpress deployment
 
 **This means a url path like https://yourcustomdomain.com/contact.php  will not be mapped !**
 
-To map the custom domain to all path urls you should:
-
-* Clone the repositry to Cloud Shell ( that is if you have not already)
+To get the custom domain to map to all url paths beyound /, you need to 
 
 * Edit the wp-config.php files to add 
 
@@ -139,9 +137,7 @@ To map the custom domain to all path urls you should:
 
             
     
- 
- 
-   
+    
  * Then rebuild the docker image, push it to cloud registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
 
         docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .
