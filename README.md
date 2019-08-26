@@ -124,7 +124,7 @@ Wordpress stores page & site content in the connected database ( on Cloud SQL or
 
 If you decide to use Cloud Run Custom Domain mapping on the Wordpress deployment then you have to remember that Cloud Run only maps a  domain to /, but not to a specific base path. 
 
-**This means a url path like https://customdomain.com/contact.php  will not be mapped !**
+**This means a url path like https://yourcustomdomain.com/contact.php  will not be mapped !**
 
 To map the custom domain to all path urls you should:
 
@@ -133,12 +133,12 @@ To map the custom domain to all path urls you should:
 * Edit the wp-config.php files to add 
 
 
-       define( 'WP_HOME', 'https://customdomain.com' ); 
+       define( 'WP_HOME', 'https://yourcustomdomain.com' ); 
         
-       define( 'WP_SITEURL', 'https://customdomain.com/' );
+       define( 'WP_SITEURL', 'https://yourcustomdomain.com/' );
 
             
-        with https:cutomdomain.com refering to your custom domain.
+    
  
  
    
