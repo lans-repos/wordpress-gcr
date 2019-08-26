@@ -63,11 +63,15 @@ The Run on Google Cloud deployment will prompt for the following environment var
 
  
  
- 
-## Post Deployment & the GCS Wordpress plugin
+ ## Post Deployment & the GCS Wordpress plugin
 
 After deployment & installionton of Wordpress , sign into WP-ADMIN, go to plugins, activate the GCS plugin , go the GCS plugin settings and input the url of the GCS bucket.
 
+## Creating, Editing Wordpress Pages & Site
+
+This is done the same way it is done with any other type of Wordpress depolyment. 
+
+Wordpress stores page & site content in the connected database ( on Cloud SQL or external MySQL). It will therefore survive when the  Cloud Run container scales down to zero. 
 
 ## Update / Install / Delete WordPress plugins or themes
 
@@ -114,11 +118,7 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
 
 * The wordpress core can not be updated via this process. Since docker build process always pulls the latest wordpress docker image the wordpress core can be updated by just running the three commands step above.
 
-## Creating, Editing Wordpress Pages & Site
 
-This is done the same way it is done with any other type of Wordpress depolyment. 
-
-Wordpress stores page & site content in the connected database ( on Cloud SQL or external MySQL). It will therefore survive when the  Cloud Run container scales down to zero. 
 
 ## Using Cloud Run Custom Domain on the Wordpress deployment
 
