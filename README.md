@@ -110,7 +110,13 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
        
   The proccess of rebuilding the docker image and redeploying it to the Cloud Run Service could be automated using [Cloud Build Triggers](https://cloud.google.com/run/docs/continuous-deployment?_ga=2.244497477.-1913607253.1558898014).
 
-* The wordpress core can not be updated via this process. Since docker build process always pulls the latest wordpress docker image the wordpress core can be updated by just running the three commands step above.  
+* The wordpress core can not be updated via this process. Since docker build process always pulls the latest wordpress docker image the wordpress core can be updated by just running the three commands step above.
+
+## Creating, Editing Wordpress Pages & Site
+
+This done the same way as with any other type of Wordpress depolymennt. 
+
+Wordpress stores page & site content in the connected database ( on Cloud SQL or external MySQL). It will therefore survive when the container on Cloud Run scales down to zero. 
 
 ## Using Cloud Run Custom Domain on the Wordpress deployment
 
@@ -142,7 +148,7 @@ To map the custom domain to all path urls you should:
 
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
   
-## Firebase Integration
+## Firebase & CDN Integration
 
 Coming Soon :)
 
