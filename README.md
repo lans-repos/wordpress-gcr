@@ -68,7 +68,9 @@ After deployment & installionton of Wordpress , sign into WP-ADMIN, go to plugin
 
 This is done the same way it is done with any other type of Wordpress depolyment. 
 
-Wordpress stores page & site content in the connected database ( on Cloud SQL or external MySQL). It will therefore survive when the  Cloud Run container scales down to zero. 
+Wordpress stores page & site content in the connected database ( on Cloud SQL or external MySQL) and the media files are stored in the GCS bucket configured in the GCS plugin . The site content & media will therefore survive / persist  when the  Cloud Run container scales down to zero. 
+
+ 
 
 ## Update / Install / Delete WordPress plugins or themes
 
@@ -94,7 +96,7 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
     
 * You can also use the several ```wp plugin <command> ``` or ```wp theme <command> ```  to install , delete, activate, or act upon any individual plugins or themes.
 
-* You can also from inside the wordpress directory, run the command ```wp server``` and then use the Cloud Shell Web Preview feature to access the a local version of the wordpress site. You can login to wordpress admin and update plugins or themes. 
+* You can also, from inside the wordpress directory, run the wp-cli command ```wp server``` to locally launch PHP's built-in web server an then use  [Cloud Shell Web Preview feature](https://cloud.google.com/shell/docs/using-web-preview#previewing_the_application) to access a local version of the wordpress site. You can login to wordpress admin and update plugins or themes. 
 
 
 * After locally updating plugins or themes, you need to rebuild the docker image, push it to cloud registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
