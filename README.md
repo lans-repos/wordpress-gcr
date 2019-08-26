@@ -114,9 +114,9 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
 
 ## Creating, Editing Wordpress Pages & Site
 
-This done the same way as with any other type of Wordpress depolymennt. 
+This is done the same way it is done with any other type of Wordpress depolyment. 
 
-Wordpress stores page & site content in the connected database ( on Cloud SQL or external MySQL). It will therefore survive when the container on Cloud Run scales down to zero. 
+Wordpress stores page & site content in the connected database ( on Cloud SQL or external MySQL). It will therefore survive when the  Cloud Run container onscales down to zero. 
 
 ## Using Cloud Run Custom Domain on the Wordpress deployment
 
