@@ -64,7 +64,7 @@ The Run on Google Cloud deployment will prompt for the environment variables "DB
  
  
  
- ## Post Deployment & the GCS Wordpress plugin
+## Post Deployment & GCS plugin
 
 After deployment & installionton of Wordpress , sign into WP-ADMIN, go to plugins, activate the GCS plugin , go the GCS plugin settings and input the url of the GCS bucket.
 
