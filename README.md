@@ -117,7 +117,7 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
   * The initial deployment however uses latest wordpress image and the  [Dockerfile](https://github.com/lans-repos/wordpress-gcr/blob/master/Dockerfile) always pulls the latest wordpress docker image. 
   * **The wordpress core is therefore updated each time the image is rebuilt for re-deployment.**
 
-## Using Cloud Run Custom Domain on the Wordpress deployment
+## Cloud Run Custom Domain Mapping
 
 If you decide to use Cloud Run Custom Domain mapping on the Wordpress deployment then you have to remember that Cloud Run only maps a  domain to /, but not to a specific base path. 
 
@@ -151,7 +151,7 @@ If , for security or cost management purposes, you need to control access to the
 
 Coming Soon :)
 
-## Does it even make sense to deploy Wordpress in Cloud Run ?
+## Is Wordpress in Cloud Run Ideal?
 
 That is a great question ! 
 
