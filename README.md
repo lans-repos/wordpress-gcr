@@ -2,21 +2,17 @@
 
 [![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/lans-repos/wordpress-gcr.git)
 
-Launch WordPress container on Google Cloud Run that uses a Cloud SQL or an external MySQL database.
-
-The Google Cloud Storage (GCS) wordpress plugin is baked into the Wordpress image to enable upload of images to GCS bucket for persistent storage.
-
-Note: The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
+Launch a WordPress container on Google Cloud Run that uses a Cloud SQL (or an external MySQL) database and a Google Cloud Storage (GCS) bucket for media uploads.
 
 ## Requirements
 
-* A Cloud SQL database **OR** external MySQL database that can be accessed remotely via external IP address.
+* A Cloud SQL database OR external MySQL database that can be accessed remotely via external IP address.
 
   * The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
 
   * A Cloud SQL database can be created quickly by downloading the  [createCloudSQL.sh](https://github.com/lans-repos/wordpress-gcr/blob/master/createCloudSQL.sh) script and running it in Cloud Shell.
   
-  * A cheap, dirty, not production recommeded, and probably insecure database option is to deploy Google [MySQL VM](https://console.cloud.google.com/marketplace/details/click-to-deploy-images/mysql?q=mysql&id=59e776b5-96fb-4644-8a6e-92c2756ebef5) on GCP with an externally exposed IP & firewall configured to accept traffic on port 3306 from anywhere. This option could even be free (i.e eligible for Google Cloud free tier)  if the VM is located in a US region (excluding Northern Virginia [us-east4]) and configured ( or re-configured after deployment) with 1 f1-micro instanc and max 30 GB HDD. 
+  * A cheap, dirty, not production recommeded, and probably insecure database option is to deploy Google [MySQL VM](https://console.cloud.google.com/marketplace/details/click-to-deploy-images/mysql?q=mysql&id=59e776b5-96fb-4644-8a6e-92c2756ebef5) on GCP with an externally exposed IP & firewall configured to accept traffic on port 3306 from anywhere. This option could even be free (i.e eligible for [Google Cloud free tier](https://cloud.google.com/free/docs/gcp-free-tier#always-free-usage-limits))  if the VM is located in a US region (excluding Northern Virginia [us-east4]) and configured ( or re-configured after deployment) with 1 f1-micro instanc and max 30 GB HDD. 
 
 * A Google Cloud Storage (GCS) Bucket with its object default permission configured for allUsers. See this [plugin support response](https://wordpress.org/support/topic/google-storage-not-work/page/2/#post-8897852) on how to configure the  GCS bucket so that uploaded images are publicly available.
 
@@ -159,11 +155,11 @@ Coming Soon :)
 
 That is a great question ! 
 
-I will admit that Cloud Run's stateless container model makes Wordpress admini & update cumbersome and time consuming. Hence this  might only appeal to an enthustiast or a DevOps that likes over-engineered solutions.
+I will agree that Cloud Run's stateless container model makes Wordpress admin & update cumbersome and time consuming. Hence this  might only appeal to an enthustiast or a DevOps that likes over-engineered solutions.
 
 I did however observe that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) also uses a stateless severless architecture. I am therefore going to assume that stateless severless Wordpress does have some technically benefits. :)
 
-WordPress on Cloud Run might be perfect & cheap for a site that gets periodic, unpredictable spikes of intense traffic. It will be non-ideal and  expensive(due to Cloud Run's billing model) for a site that gets regular and consistent traffic.
+WordPress on Cloud Run might be perfect & cheap for a site that gets periodic, unpredictable spikes of intense traffic. It will be non-ideal and  expensive(due to [Cloud Run's billing model](https://cloud.google.com/run/pricing#pricing_table)) for a site that gets regular and consistent traffic.
 
 
 
