@@ -116,9 +116,9 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
        
   The proccess of rebuilding the docker image and redeploying it to the Cloud Run Service could be automated using [Cloud Build Triggers](https://cloud.google.com/run/docs/continuous-deployment?_ga=2.244497477.-1913607253.1558898014).
 
-* The wordpress core can not be updated via this process. Since docker build process always pulls the latest wordpress docker image the wordpress core can be updated by just running the three commands step above.
-
-
+* The wordpress core can not be updated via this process. 
+  * The initial deployment however uses latest wordpress image and the  [Dockerfile](https://github.com/lans-repos/wordpress-gcr/blob/master/Dockerfile) always pulls the latest wordpress docker image. 
+  * **The wordpress core is therefore updated each time the image is rebuilt for re-deployment.**
 
 ## Using Cloud Run Custom Domain on the Wordpress deployment
 
