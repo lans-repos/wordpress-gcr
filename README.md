@@ -8,8 +8,6 @@ Launch a WordPress container on Google Cloud Run that uses a Cloud SQL (or an ex
 
 * A Cloud SQL database OR external MySQL database that can be accessed remotely via external IP address.
 
-  * The Cloud SQL or external MySQL database for the wordpress should be setup & ready before clicking the Run on Google Cloud Button.
-
   * A Cloud SQL database can be created quickly by downloading the  [createCloudSQL.sh](https://github.com/lans-repos/wordpress-gcr/blob/master/createCloudSQL.sh) script and running it in Cloud Shell.
   
   * A cheap, dirty, not production recommeded, and probably insecure database option is to deploy Google [MySQL VM](https://console.cloud.google.com/marketplace/details/click-to-deploy-images/mysql?q=mysql&id=59e776b5-96fb-4644-8a6e-92c2756ebef5) on GCP with an externally exposed IP & firewall configured to accept traffic on port 3306 from anywhere. This option could even be free (i.e eligible for [Google Cloud free tier](https://cloud.google.com/free/docs/gcp-free-tier#always-free-usage-limits))  if the VM is located in a US region (excluding Northern Virginia [us-east4]) and configured ( or re-configured after deployment) with 1 f1-micro instanc and max 30 GB HDD. 
