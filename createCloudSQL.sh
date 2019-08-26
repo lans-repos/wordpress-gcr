@@ -4,7 +4,7 @@ echo "This script automates the creation of a CloudSQL Instance & database on GC
 
 read -p "Enter Chosen Name for the CloudSQL Instance: "  instanceName
 read -p "Enter Chosen Database Name: "  databaseName
-read -p "Enter root password for CloudSQL Instance: "  passWord
+read -p "Enter root password for the CloudSQL Instance: "  passWord
 
 
 gcloud sql instances create $instanceName --activation-policy=ALWAYS --tier=db-n1-standard-1
