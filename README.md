@@ -146,7 +146,11 @@ To get the custom domain to map to all url paths beyound /, you need to
         docker push gcr.io/[PROJECT-ID]/wordpress-gcr
 
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
-  
+
+## Access Control
+
+If , for security or cost management purposes, you need to control access to the site you can configure Cloud Run's [access mananging via IAM](https://cloud.google.com/run/docs/securing/managing-access) feature.
+
 ## Firebase & CDN Integration
 
 Coming Soon :)
