@@ -1,7 +1,7 @@
 
 
 
-## Wordpress  on Cloud Run <div> <img src="https://github.com/lans-repos/wordpress-gcr/blob/master/WordPress.png" height="30"> + <img src="https://github.com/lans-repos/wordpress-gcr/blob/master/CloudRun.png" height="30"> </div>
+## Wordpress  on Cloud Run <img src="https://github.com/lans-repos/wordpress-gcr/blob/master/WordPress.png" height="30"> + <img src="https://github.com/lans-repos/wordpress-gcr/blob/master/CloudRun.png" height="30"> 
 [![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/lans-repos/wordpress-gcr.git)
 
 Launch a WordPress container on Google Cloud Run that uses a Cloud SQL (or an external MySQL) database and a Google Cloud Storage (GCS) bucket for media uploads.
