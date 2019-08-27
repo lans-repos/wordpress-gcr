@@ -1,5 +1,5 @@
 
-<p align="center"><img src="https://github.com/lans-repos/wordpress-gcr/blob/master/WordPress.png" height="100" />  + <img src="https://github.com/lans-repos/wordpress-gcr/blob/master/CloudRun.png" height="100"/>  </p>
+<p align="center"><img src="https://github.com/lans-repos/wordpress-gcr/blob/master/WordPress.jpg" height="100" />  + <img src="https://github.com/lans-repos/wordpress-gcr/blob/master/CloudRun.jpg" height="100"/>  </p>
 
 ## Wordpress on Cloud Run 
 [![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/lans-repos/wordpress-gcr.git)
