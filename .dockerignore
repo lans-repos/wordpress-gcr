@@ -1,3 +1,4 @@
+*.jpg
 *.png
 createCloudSQL.sh
 /wordpress
