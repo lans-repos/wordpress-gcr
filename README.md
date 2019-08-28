@@ -51,7 +51,7 @@ The Run on Google Cloud deployment will prompt for the environment variables "DB
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --set-env-vars DB_HOST='127.0.0.1',DB_NAME=<dbname>,DB_USER=<dbuser>,DB_PASSWORD=<dbpass>,CLOUDSQL_INSTANCE='poject.id:region:instance-name' 
 
        
-     If you are using an exertnal MysQL databas then deploy using the command after replacing  PROJECT-ID, DB_HOST, DB_NAME, DB_USER & DB_PASSWORD with the relevant values: 
+     If you are using an exertnal MysQL database then deploy using the command after replacing  PROJECT-ID, DB_HOST, DB_NAME, DB_USER & DB_PASSWORD with the relevant values: 
     
   
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --set-env-vars DB_HOST=<dbhost>,DB_NAME=<dbname>,DB_USER=<dbuser>,DB_PASSWORD=<dbpass>
@@ -154,13 +154,13 @@ If , for security or cost management purposes, you need to control access to the
 
 Coming Soon :)
 
-## Is Wordpress in Cloud Run Ideal?
+## Is Wordpress in Cloud Run a good idea?
 
 That is a great question ! 
 
 I will agree that Cloud Run's stateless container model makes Wordpress admin & update cumbersome and time consuming. Hence this  might only appeal to an enthustiast or a DevOps that likes over-engineered solutions.
 
-I did however observe that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) also uses a stateless severless architecture. I am therefore going to assume that stateless severless Wordpress does have some technically benefits. :)
+I did however observe that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) also uses a stateless severless architecture. I am therefore going to assume that stateless severless Wordpress does have some technically benefits.:smile:
 
 WordPress on Cloud Run might be perfect & cheap for a site that gets periodic, unpredictable spikes of intense traffic. It will be non-ideal and  expensive(due to [Cloud Run's billing model](https://cloud.google.com/run/pricing#pricing_table)) for a site that gets regular and consistent traffic.
 
