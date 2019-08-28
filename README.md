@@ -108,11 +108,10 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --set-env-vars DB_HOST='127.0.0.1',DB_NAME=<dbname>,DB_USER=<dbuser>,DB_PASSWORD=<dbpass>,CLOUDSQL_INSTANCE='poject.id:region:instance-name' 
         
     
-       In the above commands  [PROJECT-ID] is your gcp project-id.
+
        
-       The command also assume that the Cloud Run Service name is unchange and remains wordpress-gcr.
-       
-       
+  In the above commands [PROJECT-ID] is your gcp project-id. It also assumes the of a Cloud SQL database and that  Cloud Run Service name is wordpress-gcr.
+  
   The proccess of rebuilding the docker image and redeploying it to the Cloud Run Service could be automated using [Cloud Build Triggers](https://cloud.google.com/run/docs/continuous-deployment?_ga=2.244497477.-1913607253.1558898014).
 
 * The wordpress core can not be updated using the above steps. 
@@ -144,6 +143,8 @@ To get the custom domain to map to all url paths beyound /, you need to
         docker push gcr.io/[PROJECT-ID]/wordpress-gcr
 
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --set-env-vars DB_HOST='127.0.0.1',DB_NAME=<dbname>,DB_USER=<dbuser>,DB_PASSWORD=<dbpass>,CLOUDSQL_INSTANCE='poject.id:region:instance-name' 
+
+    In the above commands [PROJECT-ID] is your gcp project-id. It also assumes the of a Cloud SQL database and that  Cloud Run Service name is wordpress-gcr.
 
 ## Access Control
 
