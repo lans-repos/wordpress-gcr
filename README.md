@@ -78,7 +78,7 @@ This has to done locally in Google Cloud Shell and then pushed (i.e redployed) t
 
 Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" it might be advisable to return to Cloud Shell  Default enviroment and pull a clone of this repository before you start any of the steps below:
 
-*  Install the wp-cli utility using the command:
+*  Install the wp-cli utility using composer:
 
      ``` composer require wp-cli/wp-cli-bundle```
 
@@ -105,7 +105,7 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
         
         docker push gcr.io/[PROJECT-ID]/wordpress-gcr
 
-        gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
+        gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --set-env-vars DB_HOST='127.0.0.1',DB_NAME=<dbname>,DB_USER=<dbuser>,DB_PASSWORD=<dbpass>,CLOUDSQL_INSTANCE='poject.id:region:instance-name' 
         
     
        In the above commands  [PROJECT-ID] is your gcp project-id.
@@ -143,7 +143,7 @@ To get the custom domain to map to all url paths beyound /, you need to
         
         docker push gcr.io/[PROJECT-ID]/wordpress-gcr
 
-        gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr
+        gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --set-env-vars DB_HOST='127.0.0.1',DB_NAME=<dbname>,DB_USER=<dbuser>,DB_PASSWORD=<dbpass>,CLOUDSQL_INSTANCE='poject.id:region:instance-name' 
 
 ## Access Control
 
