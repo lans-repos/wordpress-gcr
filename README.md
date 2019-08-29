@@ -162,7 +162,7 @@ That is a great question !
 
 I will agree that Cloud Run's stateless container model makes Wordpress admin & update cumbersome and time consuming. Hence this  might only appeal to an enthustiast or a DevOps that likes over-engineered solutions.
 
-I however think that the fact that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) also stateless & severless suggests this architecture does have some technically benefits.:smile:
+I however think that the fact that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) is also stateless & severless suggests this architecture does have some technically benefits.:smile:
 
 WordPress on Cloud Run might be perfect & cheap for a site that gets periodic, unpredictable spikes of intense traffic. It will be non-ideal and  expensive(due to [Cloud Run's billing model](https://cloud.google.com/run/pricing#pricing_table)) for a site that gets regular and consistent traffic.
 
