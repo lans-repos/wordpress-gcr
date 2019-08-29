@@ -76,7 +76,7 @@ Wordpress stores page & site content in the connected database ( on Cloud SQL or
 
 ## Update / Install / Delete WordPress plugins or themes
 
-This has to done locally in Google Cloud Shell and then pushed (i.e redployed) to Cloud Run and requires the use of the wp-cli utility and the wordpress directory included in this repository.
+This has to be done locally in Google Cloud Shell and then pushed (i.e redployed) to Cloud Run and requires the use of the wp-cli utility and the wordpress directory included in this repository.
 
 Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" it might be advisable to return to Cloud Shell  Default enviroment and pull a clone of this repository before you start any of the steps below:
 
@@ -101,7 +101,7 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
 * You can also, from inside the wordpress directory, run the wp-cli command ```wp server``` to locally launch PHP's built-in web server and then use [Cloud Shell Web Preview feature](https://cloud.google.com/shell/docs/using-web-preview#previewing_the_application) to access the local version of the wordpress site. You can login to wordpress admin and update plugins or themes. 
 
 
-* After locally updating plugins or themes, you need to rebuild the docker image, push it to cloud registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
+* After locally updating plugins or themes, you need to rebuild the docker image, push it to Cloud Registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
 
         docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .
         
@@ -112,9 +112,9 @@ Since the Run on Google Cloud deployment uses Cloud Shell "Trusted Environment" 
     
 
        
-  In the above commands [PROJECT-ID] is your gcp project-id. It also assumes the of a Cloud SQL database and that  Cloud Run Service name is wordpress-gcr.
+  In the above commands [PROJECT-ID] is your gcp project-id. It also assumes the use of a Cloud SQL database and that the Cloud Run service name is wordpress-gcr.
   
-  The proccess of rebuilding the docker image and redeploying it to the Cloud Run Service could be automated using [Cloud Build Triggers](https://cloud.google.com/run/docs/continuous-deployment?_ga=2.244497477.-1913607253.1558898014).
+  The proccess of rebuilding the docker image and redeploying it to the Cloud Run service could be automated using [Cloud Build Triggers](https://cloud.google.com/run/docs/continuous-deployment?_ga=2.244497477.-1913607253.1558898014).
 
 * The wordpress core can not be updated using the above steps. 
   * The initial deployment however uses latest wordpress image and the  [Dockerfile](https://github.com/lans-repos/wordpress-gcr/blob/master/Dockerfile) always pulls the latest wordpress docker image. 
@@ -138,7 +138,7 @@ To get the custom domain to map to all url paths beyound /, you need to
             
     
     
- * Then rebuild the docker image, push it to cloud registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
+ * Then rebuild the docker image, push it to Cloud Registry and then push (redeploy) the updated image to Cloud Run by running the following three commands:
 
         docker build -t gcr.io/[PROJECT-ID]/wordpress-gcr .
         
@@ -146,7 +146,7 @@ To get the custom domain to map to all url paths beyound /, you need to
 
         gcloud beta run deploy wordpress-gcr  --image gcr.io/[PROJECT-ID]/wordpress-gcr --set-env-vars DB_HOST='127.0.0.1',DB_NAME=<dbname>,DB_USER=<dbuser>,DB_PASSWORD=<dbpass>,CLOUDSQL_INSTANCE='poject.id:region:instance-name' 
 
-    In the above commands [PROJECT-ID] is your gcp project-id. It also assumes the of a Cloud SQL database and that  Cloud Run Service name is wordpress-gcr.
+    In the above commands [PROJECT-ID] is your gcp project-id. It also assumes the use of a Cloud SQL database and that  Cloud Run service name is wordpress-gcr.
 
 ## Access Control
 
@@ -162,7 +162,7 @@ That is a great question !
 
 I will agree that Cloud Run's stateless container model makes Wordpress admin & update cumbersome and time consuming. Hence this  might only appeal to an enthustiast or a DevOps that likes over-engineered solutions.
 
-I did however observe that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) also uses a stateless severless architecture. I am therefore going to assume that stateless severless Wordpress does have some technically benefits.:smile:
+I however think that the fact that [Wordpress on AppEngine](https://cloud.google.com/wordpress/#appengine) is also stateless severless suggests this architecture does have some technically benefits.:smile:
 
 WordPress on Cloud Run might be perfect & cheap for a site that gets periodic, unpredictable spikes of intense traffic. It will be non-ideal and  expensive(due to [Cloud Run's billing model](https://cloud.google.com/run/pricing#pricing_table)) for a site that gets regular and consistent traffic.
 
